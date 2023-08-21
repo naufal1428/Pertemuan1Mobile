@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,11 +19,21 @@ class MainActivity : AppCompatActivity() {
         sayHelloButton = findViewById(R.id.sayHelloButton)
         sayHelloTextView = findViewById(R.id.sayHelloTextView)
     }
+
+    private fun checkFingerprint(){
+        if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
+            Log.i("FEATURE", "FEATURE FINGERPRINT ON")
+        } else {
+            Log.w("FETAURE", "FEATURE FINGGERPRINT OFF")
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.hello_world)
 
         //commit 1
+
+        checkFingerprint()
 
         initComponents()
 
