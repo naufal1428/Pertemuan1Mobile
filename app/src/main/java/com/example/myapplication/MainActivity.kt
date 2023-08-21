@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.hello_world)
 
+        //commit 1
+
         initComponents()
 
         sayHelloTextView.text = resources.getString(R.string.app_name)
